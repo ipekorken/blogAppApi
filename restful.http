@@ -1,0 +1,44 @@
+@BASE_URL = http://localhost:3000/api
+
+###
+GET http://localhost:3000
+
+###
+
+GET {{BASE_URL}}/posts
+
+###
+
+POST {{BASE_URL}}/posts/sendPost
+Content-Type: application/json
+
+{
+    "title" : "New Post 10",
+    "description" : "New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10",
+    "image" : "https://picsum.photos/200/300"
+}
+
+###
+POST {{BASE_URL}}/users/login
+Content-Type: application/json
+
+{
+    "email" : "user1@mail.com",
+    "password" : "user1Psw"
+}
+
+###
+POST {{BASE_URL}}/users/register
+Content-Type: application/json
+
+{
+  "name" : "user1",
+  "surname" : "user1",
+  "email" : "user1@mail.com",
+  "password" : "user1Psw"
+}
+
+###
+DELETE {{BASE_URL}}/posts/62162a23d5de9d8de0385d1b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI4YWQ1ZGU5ZDhkZTAzODVkMjYiLCJlbWFpbCI6InVzZXIxQG1haWwuY29tIiwiaWF0IjoxNjQ1NjIzMTU4LCJleHAiOjE2NDU2MjY3NTh9.oipUH7GDtNaazuxW4fXxUj4BvS62uBd7-IH-h8pZvaE
+Content-Type: application/json

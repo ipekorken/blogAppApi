@@ -5,5 +5,5 @@ mongoose
     useUnifiedTopology: true,
     useNewUrlParser: true,
   })
-  .then(() => console.log('conneted to database'))
-  .catch(error => console.log('failed database connection'));
+  .then(() => console.log('veritabanına baglanıldı'))
+  .catch(hata => console.log('veritabanı baglantı hatası'));
