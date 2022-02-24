@@ -10,12 +10,14 @@ GET {{BASE_URL}}/posts
 ###
 
 POST {{BASE_URL}}/posts/sendPost
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI0NmQ1ZGU5ZDhkZTAzODVkMjIiLCJlbWFpbCI6ImlwZWtAbWFpbC5jb20iLCJpYXQiOjE2NDU2OTc5NDgsImV4cCI6MTY0NTcwMTU0OH0.wofPP3q_s7jiUtS7G2fkM7BLxQV-5RbC1UAXfXHFywE
 Content-Type: application/json
 
 {
-    "title" : "New Post 10",
-    "description" : "New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10New Description 10",
-    "image" : "https://picsum.photos/200/300"
+    "title" : "Fav post",
+    "description" : "adasdasdas",
+    "image" : "https://picsum.photos/200/300",
+    "isFavorite" : true
 }
 
 ###
@@ -23,8 +25,8 @@ POST {{BASE_URL}}/users/login
 Content-Type: application/json
 
 {
-    "email" : "user1@mail.com",
-    "password" : "user1Psw"
+    "email" : "ipek@mail.com",
+    "password" : "ipekPsw"
 }
 
 ###
@@ -32,13 +34,39 @@ POST {{BASE_URL}}/users/register
 Content-Type: application/json
 
 {
-  "name" : "user1",
-  "surname" : "user1",
-  "email" : "user1@mail.com",
-  "password" : "user1Psw"
+  "name" : "user5",
+  "surname" : "user5",
+  "email" : "user5@mail.com",
+  "password" : "user5Psw"
 }
 
 ###
 DELETE {{BASE_URL}}/posts/62162a23d5de9d8de0385d1b
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI4YWQ1ZGU5ZDhkZTAzODVkMjYiLCJlbWFpbCI6InVzZXIxQG1haWwuY29tIiwiaWF0IjoxNjQ1NjIzMTU4LCJleHAiOjE2NDU2MjY3NTh9.oipUH7GDtNaazuxW4fXxUj4BvS62uBd7-IH-h8pZvaE
 Content-Type: application/json
+
+###
+
+PATCH  {{BASE_URL}}/posts/doFavorite/62175c7fbdd187289e184699
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI0NmQ1ZGU5ZDhkZTAzODVkMjIiLCJlbWFpbCI6ImlwZWtAbWFpbC5jb20iLCJpYXQiOjE2NDU2OTk3MjMsImV4cCI6MTY0NTcwMzMyM30.GLejJrNmO3Aohim7ff0J3i9ntdF6nK9UBf6yWB_a7Os
+Content-Type: application/json
+
+{
+  "isFavorite" : false
+}
+
+###
+
+PATCH  {{BASE_URL}}/posts/updatePost/62175c7fbdd187289e184699
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI0NmQ1ZGU5ZDhkZTAzODVkMjIiLCJlbWFpbCI6ImlwZWtAbWFpbC5jb20iLCJpYXQiOjE2NDU3MTA0NzUsImV4cCI6MTY0NTcxNDA3NX0.HFR5qe1bffDTTTxy1duXLzRwX-iztmiM02GgSnE_Dr0
+Content-Type: application/json
+
+{
+  "title" : "new post title",
+  "description": "new post description"
+}
+
+###
+GET {{BASE_URL}}/posts/62175c7fbdd187289e184699
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI0NmQ1ZGU5ZDhkZTAzODVkMjIiLCJlbWFpbCI6ImlwZWtAbWFpbC5jb20iLCJpYXQiOjE2NDU3MDUwNDUsImV4cCI6MTY0NTcwODY0NX0.YJ6o9DVsqRJnpSDhJDHt8ChbSAkW5p1d_4miOEvSJVE

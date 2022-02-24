@@ -21,6 +21,11 @@ const sendPost = async (req, res, next) => {
   }
 };
 
+const getPostInfo = async (req, res, next) => {
+  const result = await Post.find({ _id: req.params.id });
+  res.json(result);
+};
+
 const updatePost = async (req, res, next) => {
   delete req.body.createAt;
   delete req.body.updatedAt;
@@ -30,7 +35,7 @@ const updatePost = async (req, res, next) => {
     next(createError(400, error));
   } else {
     try {
-      const result = await User.findByIdAndUpdate({ _id: req.post.id }, req.body, {
+      const result = await Post.findByIdAndUpdate({ _id: req.params.id }, req.body, {
         new: true,
         runValidators: true,
       });
@@ -71,4 +76,5 @@ module.exports = {
   sendPost,
   updatePost,
   deletePost,
+  getPostInfo,
 };
