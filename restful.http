@@ -10,14 +10,13 @@ GET {{BASE_URL}}/posts
 ###
 
 POST {{BASE_URL}}/posts/sendPost
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI0NmQ1ZGU5ZDhkZTAzODVkMjIiLCJlbWFpbCI6ImlwZWtAbWFpbC5jb20iLCJpYXQiOjE2NDU2OTc5NDgsImV4cCI6MTY0NTcwMTU0OH0.wofPP3q_s7jiUtS7G2fkM7BLxQV-5RbC1UAXfXHFywE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjE2MmI0NmQ1ZGU5ZDhkZTAzODVkMjIiLCJlbWFpbCI6ImlwZWtAbWFpbC5jb20iLCJpYXQiOjE2NDU3NzE0NjksImV4cCI6MTY0NTc3NTA2OX0.Gi6VI_QVd6N5bdPO6kkF8bRZx0Mtwwexvdvf-SXALlw
 Content-Type: application/json
 
 {
-    "title" : "Fav post",
-    "description" : "adasdasdas",
-    "image" : "https://picsum.photos/200/300",
-    "isFavorite" : true
+    "title" : "Post 8",
+    "description" : "Post Description 8",
+    "image" : "https://picsum.photos/200/300"
 }
 
 ###

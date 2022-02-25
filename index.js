@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 //routes
 const postRouter = require('./router/postRouter');
 const userRouter = require('./router/userRouter');
+const favoriteRouter = require('./router/favoriteRouter');
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/posts', postRouter);
 app.use('/api/users', userRouter);
+app.use('/api/favorites', favoriteRouter);
 //bütün isteklerin başına api koyduk.
 //böyle başlayan 'api/users' her şey de userRouter'ı kullan.
 

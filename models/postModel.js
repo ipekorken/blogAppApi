@@ -23,10 +23,6 @@ const PostSchema = new Schema(
       required: true,
       trim: true,
     },
-    isFavorite: {
-      type: Boolean,
-      default: false,
-    },
   },
   { collection: 'Posts', timestamps: true }
 );
@@ -34,7 +30,6 @@ const schema = Joi.object({
   title: Joi.string().min(3).max(50).trim(),
   description: Joi.string().min(2).trim(),
   image: Joi.string().trim(),
-  isFavorite: Joi.boolean(),
 });
 
 //yeni bir post için:
@@ -45,7 +40,6 @@ PostSchema.methods.joiValidation = function (postObject) {
 
 PostSchema.methods.toJSON = function () {
   const post = this.toObject();
-  //delete user._id;
   delete post.createdAt;
   delete post.updatedAt;
   delete post.__v;
